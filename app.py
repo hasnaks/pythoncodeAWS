@@ -1,16 +1,17 @@
+import os
 from flask import Flask,render_template,request
 import boto3
 import pymysql
 
 app = Flask(__name__)
 
-bucket_name="student-photo-demo-gopu"
 
+bucket_name="student-photos-hasna-2026"
 db=pymysql.connect(
-host="100.57.165.48",
-port="3306",
+host="studentdb1.cxkcq0eoyadn.eu-north-1.rds.amazonaws.com",
+port=3306,
 user="admin",
-password="Admin123",
+password=os.environ["DB_PASSWORD"],
 database="studentdb"
 )
 
